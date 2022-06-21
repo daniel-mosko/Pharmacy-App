@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="sk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Prihlásiť</title>
+    <link rel="icon" href="./assets/img/icons/talithaicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="./assets/css/login.css" rel="stylesheet">
+</head>
+
+<body>
+<div data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true" class="login-card"
+     style="font-family: Roboto, sans-serif;background: #fffafa;box-shadow: 0px 0px 16px 0px rgba(33,37,41,0.14);opacity: 1;border-style: none;border-color: #7dd1c1;border-right-style: none;border-radius: 4px;">
+    <p class="profile-name-card" style="padding: 20px;margin: -15px 0px 0px;margin-top: -25px;"><img
+            src="./assets/img/logo/talitha200full.png" style="width: 130px"></p>
+    <h1 style="font-size: 28px;font-family: Roboto;color: rgb(101,101,101);margin-bottom: 10px;text-align: left;">
+        Prihlásenie</h1>
+    <p style="font-size: 15px;font-family: Roboto;color: rgb(101,101,101);margin-bottom: 10px;text-align: left;"
+       th:if="${param.error}" class="error">Nesprávne prihlasovacie údaje</p>
+    <p style="font-size: 15px;font-family: Roboto;color: rgb(101,101,101);margin-bottom: 10px;text-align: left;"
+       th:if="${param.logout}" class="error">Boli ste odhlásený</p>
+
+    <form class="form-signin" th:action="@{/login}" method="post">
+        <input class="form-control" name="username" type="text" id="username" placeholder="Užívateľské meno"
+               required="" style="margin-top: 10px;margin-bottom: -10px;">
+        <span class="reauth-email" style="margin:11px;"> </span>
+        <input class="form-control" name="password" type="password" id="password" required="" placeholder="Heslo">
+        <button class="btn btn-primary btn-block btn-lg btn-signin"
+                style="font-family: Roboto, sans-serif;font-size: 16px;font-weight: normal;font-style: normal;background: #7dd1c1;border-style: none;"
+                type="submit">Prihlásiť
+        </button>
+    </form>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="./assets/js/login.js"></script>
+</body>
+
+</html>
